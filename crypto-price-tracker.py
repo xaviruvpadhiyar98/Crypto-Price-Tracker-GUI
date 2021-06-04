@@ -30,22 +30,28 @@ def clock():
     root.after(1000, clock)
 
 def btc_crypto_price_show():
-    text = f"BTC-INR - Rs. {get_btc_inr()}"
+    price = get_btc_inr()
+    text = f"BTC-INR - Rs. {price}"
+    print(text)
     btc.config(text=text)
     btc.configure(foreground='white')
-    root.after(30000)
+    root.after(15000)
 
 def eth_crypto_price_show():
-    text = f"ETH-INR - Rs. {get_eth_inr()}"
+    price = get_eth_inr()
+    text = f"ETH-INR - Rs. {price}"
+    print(text)
     eth.config(text=text)
     eth.configure(foreground='white')
-    root.after(30000)
+    root.after(15000)
 
 def doge_crypto_price_show():
-    text = f"DOGE-INR - Rs. {get_doge_inr()}"
+    price = get_doge_inr()
+    text = f"DOGE-INR - Rs. {price}"
+    print(text)
     doge.config(text=text)
     doge.configure(foreground='white')
-    root.after(30000)
+    root.after(15000)
 
 # run first time
 clock()
