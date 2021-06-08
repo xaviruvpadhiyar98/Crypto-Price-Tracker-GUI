@@ -1,13 +1,14 @@
 from yfinance import Ticker
 
+def read_tickers():
+    with open('crypto_ticker.txt') as f:
+        return f.read().split()
 
-def get_btc_inr():
-    return Ticker("BTC-INR").history(period="1m").Close.item()
+def get_ticker_prices():
+    d = {}
+    for tick in read_tickers():
+        d.update({tick:Ticker(tick).history(period="1m").Close.item()})
+    return d
 
-
-def get_eth_inr():
-    return Ticker("ETH-INR").history(period="1m").Close.item()
-
-
-def get_doge_inr():
-    return Ticker("DOGE-INR").history(period="1m").Close.item()
+if __name__ == '__main__':
+    print(get_ticker_prices())
