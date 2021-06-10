@@ -1,17 +1,17 @@
-from yfinance import Ticker
+# from yfinance import Ticker
 from requests import get
 
 def read_tickers():
     with open('crypto_ticker.txt') as f:
         return f.read().split()
 
-def get_latest_crypto_prices():
-    d = {}
-    for tick in read_tickers():
-        d.update({
-            tick:Ticker(tick).history(period="1m").Close.item()
-            })
-    return d
+# def get_latest_crypto_prices():
+#     d = {}
+#     for tick in read_tickers():
+#         d.update({
+#             tick:Ticker(tick).history(period="1m").Close.item()
+#             })
+#     return d
 
 def get_latest_crypto_with_percentage():
     headers = {
